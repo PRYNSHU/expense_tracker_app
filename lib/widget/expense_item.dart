@@ -10,7 +10,7 @@ class ExpenseItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: Column(
           children: [
             Text(expense.title),
@@ -18,12 +18,14 @@ class ExpenseItem extends StatelessWidget {
             Row(
               children: [
                 Text(expense.amount.toStringAsFixed(2)), //12.331 -> 12.33
-                const Spacer(),
-                Row(children: [
-                  const Icon(Icons.alarm), 
-                  const SizedBox(width: 6),
-                  Text(expense.dt.toString())
-                ],)
+                const Spacer(), // give space as much as you can!
+                Row(
+                  children: [
+                    Icon(categoryIcon[expense.category]),
+                    const SizedBox(width: 6),
+                    Text(expense.getdateformatter()),
+                  ],
+                )
               ],
             )
           ],

@@ -14,9 +14,9 @@ class ExpenseList extends StatelessWidget {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            Text(expenses[index].title),
-            Text(expenses[index].id),
-            Text("${expenses[index].amount}"),
+            // Text(expenses[index].title),
+            // Text(expenses[index].id),
+            // Text("${expenses[index].amount}"),
             ExpenseItem(expenses[index]),
           ],
         );
